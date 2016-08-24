@@ -1,5 +1,5 @@
 (function(){
-     angular.module('roiCalculator')
+     angular.module("roiCalculator")
           .controller("calculatorController", calculatorController)
 
           function calculatorController (){
