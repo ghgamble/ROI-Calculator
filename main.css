@@ -3,6 +3,12 @@ td {
      height: 50px;
 }
 
+body {
+     margin-top: 50px;
+     margin-right: 300px;
+     margin-left: 50px;
+}
+
 button {
      padding-left: 30px;
      padding-right: 30px;
