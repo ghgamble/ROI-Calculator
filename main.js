@@ -17,12 +17,12 @@ var myApp = angular.module("roiCalculator", [])
           cCtrl.monthlyContributionProfit = 0
           cCtrl.totalContributionProfit = 0
           cCtrl.contributionMargin = 0
-          cCtrl.capitalRoi = 0 
+          cCtrl.capitalRoi = 0
 
           cCtrl.deleteRevenue = function($index) {
-               cCtrl.totalRevenue -= (cCtrl.revenueItems[$index].oneTimeRevenue + (cCtrl.revenueItems[$index].monthlyRevenue * 12))
                cCtrl.oneTimeRevenue -= cCtrl.revenueItems[$index].oneTimeRevenue
                cCtrl.monthlyRevenue -= cCtrl.revenueItems[$index].monthlyRevenue
+               cCtrl.totalRevenue -= (cCtrl.revenueItems[$index].oneTimeRevenue + (cCtrl.revenueItems[$index].monthlyRevenue * 12))
                cCtrl.monthlyContributionProfit = cCtrl.monthlyRevenue - cCtrl.totalExpenses
                cCtrl.totalContributionProfit = cCtrl.totalRevenue - cCtrl.totalExpenses
                cCtrl.contributionMargin = cCtrl.totalContributionProfit/cCtrl.totalRevenue
@@ -30,13 +30,9 @@ var myApp = angular.module("roiCalculator", [])
                cCtrl.revenueItems.splice($index, 1)
           }
           cCtrl.addRevenue = function(){
-               cCtrl.totalRevenue += (cCtrl.newRevenue.oneTimeRevenue + (cCtrl.newRevenue.monthlyRevenue * 12))
                cCtrl.oneTimeRevenue += cCtrl.newRevenue.oneTimeRevenue
-               console.log(cCtrl.newRevenue.oneTimeRevenue)
-               console.log(cCtrl.oneTimeRevenue)
                cCtrl.monthlyRevenue += cCtrl.newRevenue.monthlyRevenue
-               console.log(cCtrl.newRevenue.monthlyRevenue * 12)
-               console.log(cCtrl.monthlyRevenue)
+               cCtrl.totalRevenue += (cCtrl.newRevenue.oneTimeRevenue + (cCtrl.newRevenue.monthlyRevenue * 12))
                cCtrl.monthlyContributionProfit += cCtrl.monthlyRevenue - cCtrl.monthlyExpense
                cCtrl.totalContributionProfit += cCtrl.totalRevenue - cCtrl.totalExpenses
                cCtrl.contributionMargin = cCtrl.totalContributionProfit/cCtrl.totalRevenue
@@ -45,19 +41,19 @@ var myApp = angular.module("roiCalculator", [])
                cCtrl.newRevenue = {}
           }
           cCtrl.deleteExpense = function($index){
-               cCtrl.totalExpenses -= (cCtrl.expenseItems[$index].oneTimeExpense + (cCtrl.expenseItems[$index].monthlyExpense * 12))
                cCtrl.oneTimeExpense -= cCtrl.expenseItems[$index].oneTimeExpense
                cCtrl.monthlyExpense -= (cCtrl.expenseItems[$index].monthlyExpense)
                cCtrl.monthlyContributionProfit = cCtrl.monthlyRevenue - cCtrl.monthlyExpense
+               cCtrl.totalExpenses -= (cCtrl.expenseItems[$index].oneTimeExpense + (cCtrl.expenseItems[$index].monthlyExpense * 12))
                cCtrl.totalContributionProfit = cCtrl.totalExpenses - cCtrl.totalRevenue
                cCtrl.contributionMargin = cCtrl.totalContributionProfit/cCtrl.totalRevenue
                cCtrl.capitalRoi = (cCtrl.oneTimeExpense - cCtrl.oneTimeRevenue)/cCtrl.monthlyContributionProfit
                cCtrl.expenseItems.splice($index, 1)
           }
           cCtrl.addExpense = function(){
-               cCtrl.totalExpenses += (cCtrl.newExpense.oneTimeExpense + (cCtrl.newExpense.monthlyExpense * 12))
                cCtrl.oneTimeExpense += cCtrl.newExpense.oneTimeExpense
                cCtrl.monthlyExpense += cCtrl.newExpense.monthlyExpense
+               cCtrl.totalExpenses += (cCtrl.newExpense.oneTimeExpense + (cCtrl.newExpense.monthlyExpense * 12))
                cCtrl.monthlyContributionProfit = cCtrl.monthlyRevenue - cCtrl.monthlyExpense
                cCtrl.totalContributionProfit = cCtrl.totalRevenue - cCtrl.totalExpenses
                cCtrl.contributionMargin = cCtrl.totalContributionProfit/cCtrl.totalRevenue
