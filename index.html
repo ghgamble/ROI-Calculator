@@ -25,24 +25,20 @@
                     <th><strong>One-Time</strong></th>
                     <th><strong>Monthly</strong></th>
                     <td></td>
-                    <td></td>
                </tr>
                <tr ng-repeat="item in cCtrl.revenueItems">
                     <td>{{item.name}}</td>
                     <td>{{item.oneTimeRevenue | currency}}</td>
                     <td>{{item.monthlyRevenue | currency}}
                     <td><button ng-click="cCtrl.deleteRevenue($index)" type="submit">Delete</button></td>
-                    <td></td>
                </tr>
                <tr>
-                    <td><input type="text" value="Item Number" ng-model="cCtrl.newRevenue.name"></input></td>
+                    <td><input type="text" ng-model="cCtrl.newRevenue.name"></input></td>
                     <td><input type="number" ng-model="cCtrl.newRevenue.oneTimeRevenue"></input></td>
                     <td><input type="number" ng-model="cCtrl.newRevenue.monthlyRevenue"></input></td>
                     <td><button ng-click="cCtrl.addRevenue()" type="submit">Add Revenue Item</button></td>
-                    <td></td>
                </tr>
                <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -53,17 +49,14 @@
                     <td>{{item.oneTimeExpense | currency}}</td>
                     <td>{{item.monthlyExpense | currency}}
                     <td><button ng-click="cCtrl.deleteExpense($index)" type="submit">Delete</button></td>
-                    <td></td>
                </tr>
                <tr>
-                    <td><input type="text" value="Expense Number" ng-model="cCtrl.newExpense.name"></input></td>
+                    <td><input type="text" ng-model="cCtrl.newExpense.name"></input></td>
                     <td><input type="number" ng-model="cCtrl.newExpense.oneTimeExpense"></input></td>
                     <td><input type="number" ng-model="cCtrl.newExpense.monthlyExpense"></input></td>
                     <td><button ng-click="cCtrl.addExpense()" type="submit">Add Expense Item</button></td>
-                    <td></td>
                </tr>
                <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -74,42 +67,36 @@
                     <th><strong>One-Time</strong></th>
                     <th><strong>Monthly</strong></th>
                     <th><strong>Total</strong></th>
-                    <td></td>
                </tr>
                <tr>
                     <td><strong>Revenue</strong></td>
                     <td><strong>{{cCtrl.oneTimeRevenue | currency}}</strong></td>
                     <td><strong>{{cCtrl.monthlyRevenue | currency}}</strong></td>
                     <td><strong>{{cCtrl.totalRevenue | currency}}</strong></td>
-                    <td></td>
                </tr>
                <tr>
                     <td><strong>Expenses</strong></td>
                     <td><strong>{{cCtrl.oneTimeExpense | currency}}</strong></td>
                     <td><strong>{{cCtrl.monthlyExpense| currency}}</strong></td>
                     <td><strong>{{cCtrl.totalExpenses | currency}}</strong></td>
-                    <td></td>
                </tr>
                <tr>
                     <td></td>
                     <td><strong>Contribution Profit</strong></td>
                     <td><strong>{{cCtrl.monthlyContributionProfit | currency}}</strong></td>
                     <td><strong>{{cCtrl.totalContributionProfit | currency}}</strong></td>
-                    <td></td>
                </tr>
                <tr>
                     <td></td>
                     <td><strong>Contribution Margin</strong></td>
                     <td></td>
-                    <td><strong></strong></td>
-                    <td></td>
+                    <td><strong>{{cCtrl.contributionMargin * 100 | number:0}}%</strong></td>
                </tr>
                <tr>
                     <td></td>
                     <td><strong>Capital ROI (Months)</strong></td>
                     <td></td>
-                    <td><strong></strong></td>
-                    <td></td>
+                    <td><strong>{{cCtrl.capitalRoi | number:1}}</strong></td>
                </tr>
           </table>
      </body>
