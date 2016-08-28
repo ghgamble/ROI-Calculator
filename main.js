@@ -2,13 +2,13 @@
 angular.module("roiCalculator", [])
      .controller("calculatorController", calculatorController);
      function calculatorController (){
-     	var cCtrl = this;
+          var cCtrl = this;
 
-     	cCtrl.revenueItems = [];
-     	cCtrl.expenseItems = [];
+          cCtrl.revenueItems = [];
+          cCtrl.expenseItems = [];
 
-     	cCtrl.totalOneTimeRevenue = 0;
-     	cCtrl.totalMonthlyRevenue = 0;
+          cCtrl.totalOneTimeRevenue = 0;
+          cCtrl.totalMonthlyRevenue = 0;
           cCtrl.totalRevenue  = 0;
           cCtrl.totalOneTimeExpense = 0;
           cCtrl.totalMonthlyExpense = 0;

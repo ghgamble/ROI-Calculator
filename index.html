@@ -20,16 +20,16 @@
                     <td></td>
                </tr>
                <tr ng-repeat="item in cCtrl.revenueItems">
-               	<td>{{item.revenueName}}</td>
-               	<td>{{item.oneTimeRevenue | currency}}</td>
-               	<td>{{item.monthlyRevenue | currency}}
-               	<td><button ng-click="cCtrl.deleteRevenue($index)" type="submit">Delete</button></td>
+               	    <td>{{item.revenueName}}</td>
+               	    <td>{{item.oneTimeRevenue | currency}}</td>
+               	    <td>{{item.monthlyRevenue | currency}}
+               	    <td><button ng-click="cCtrl.deleteRevenue($index)" type="submit">Delete</button></td>
                </tr>
                <tr>
-               	<td><input type="text"   ng-model="cCtrl.revenueName"/></td>
-               	<td><input type="number" ng-model="cCtrl.oneTimeRevenue"/></td>
-               	<td><input type="number" ng-model="cCtrl.monthlyRevenue"/></td>
-               	<td><button ng-click="cCtrl.addRevenue()" type="submit">Add Revenue Item</button></td>
+               	    <td><input type="text"   ng-model="cCtrl.revenueName"/></td>
+               	    <td><input type="number" ng-model="cCtrl.oneTimeRevenue"/></td>
+               	    <td><input type="number" ng-model="cCtrl.monthlyRevenue"/></td>
+               	    <td><button ng-click="cCtrl.addRevenue()" type="submit">Add Revenue Item</button></td>
                </tr>
                <tr>
                     <td></td>
@@ -62,10 +62,10 @@
                     <th><strong>Total</strong></th>
                </tr>
                <tr>
-               	<td><strong>Revenue</strong></td>
-               	<td><strong>{{cCtrl.totalOneTimeRevenue | currency}}</strong></td>
-               	<td><strong>{{cCtrl.totalMonthlyRevenue | currency}}</strong></td>
-               	<td><strong>{{cCtrl.totalRevenue | currency}}</strong></td>
+               	    <td><strong>Revenue</strong></td>
+               	    <td><strong>{{cCtrl.totalOneTimeRevenue | currency}}</strong></td>
+               	    <td><strong>{{cCtrl.totalMonthlyRevenue | currency}}</strong></td>
+               	    <td><strong>{{cCtrl.totalRevenue | currency}}</strong></td>
                </tr>
                <tr>
                     <td><strong>Expenses</strong></td>
